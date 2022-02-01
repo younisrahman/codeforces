@@ -1,5 +1,7 @@
-w = int(input())
-if w > 2 and w % 2 == 0:
-    print("Yes")
-else:
-    print("No")
+n = int(input())
+implement = 0
+for i in range(n):
+    a = list(map(int, input().strip().split()))[:3]
+    if sum(a) >= 2:
+        implement += 1
+print(implement)
