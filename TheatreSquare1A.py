@@ -1,18 +1,26 @@
-n = list(map(int, input().strip().split()))[:3]
+# n = list(map(int, input().strip().split()))[:3]
 
-height = 0
-width = 0
-count = 0
-while(True):
-    count += 1
-    tilesNumber = (n[2]*count)
-    if(1 >= (n[0] / tilesNumber) and height == 0):
-        height = count
-    if(1 >= (n[1] / tilesNumber) and width == 0):
-        width = count
-    if height != 0 and width != 0:
-        break
+# print(n[0] % 4 == 0)
+# print(n[0] // (4 + 1))
 
-print(height*width)
-print(width)
-print(height)
+n, m, a = map(int, input().split())
+
+if m % a == 0:
+    r1 = m//a
+    print("if", r1)
+
+else:
+    r1 = m//a+1
+    print("else", r1)
+
+
+if n % a == 0:
+    r2 = n//a
+    print("if", r2)
+
+else:
+    r2 = n//a+1
+    print("else", r2)
+
+
+print(r1*r2)
