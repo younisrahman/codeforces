@@ -9,10 +9,9 @@ for i in range(n):
         else:
             ans -= 1
     else:
-
         if x[:-1] == "--":
             ans -= 1
         else:
-            ans += 2
+            ans += 1
 
 print(ans)
