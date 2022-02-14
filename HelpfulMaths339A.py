@@ -9,3 +9,4 @@ for i in n:
         b.append(i)
     elif i == '3':
         c.append(i)
+
