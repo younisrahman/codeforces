@@ -1,12 +1,14 @@
 n = input()
-a = []
-b = []
-c = []
+a = ''
+b = ''
+c = ''
 for i in n:
     if i == '1':
-        a.append(i)
+        a += '+1'
     elif i == '2':
-        b.append(i)
+        b += '+2'
     elif i == '3':
-        c.append(i)
+        c += '+3'
 
+result = a+b+c
+print(result[1:])
