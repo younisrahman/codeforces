@@ -6,5 +6,4 @@ for i in s:
         capital += 1
     else:
         small += 1
-
 print(s.upper() if capital > small else s.lower())
