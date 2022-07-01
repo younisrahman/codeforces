@@ -1,11 +1,9 @@
 n = int(input())
-x, y, z = [], [], []
+x = y = z = 0
 for i in range(n):
     a, b, c = map(int, input().split())
-    x.append(a)
-    y.append(b)
-    z.append(c)
+    x = a + x
+    y = b + y
+    z = c + z
 
-print(x)
-print(y)
-print(z)
+print("YES" if x == y == z == 0 else "NO")
