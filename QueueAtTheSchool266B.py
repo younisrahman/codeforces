@@ -11,7 +11,7 @@ for i in range(s):
                 output += "GB"
                 count += 2
             else:
-                output += "G"
+                output += queue[count]
                 count += 1
         except:
             output += queue[count]
