@@ -18,4 +18,4 @@ for i in s:
         str = str + i
         count = count + 1
 
-print("Yes" if str == 'hello' else "No")
+print("YES" if str == 'hello' else "NO")
