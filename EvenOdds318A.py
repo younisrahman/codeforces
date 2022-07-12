@@ -11,15 +11,9 @@
 # array = odd + even
 # print(array[k-1])
 n, k = map(int, input().split())
-a = (k*2)-1
-b = 0
-if (a > n):
-    if n % 2 == 0:
-        b = n/2
-    else:
-        b = n/2+1
-        k = k-b
-        b = k*2
-        print(b)
+half = n // 2 + n % 2
+
+if k <= half:
+    print((k * 2) - 1)
 else:
-    print(a)
+    print((k-half) * 2)
