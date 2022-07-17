@@ -1,5 +1,2 @@
-arr = list(map(int, input().split()))
-ans = 0
-for i in arr:
-
-print(arr)
+arr = set(map(int, input().split()))
+print(4-len(arr))
