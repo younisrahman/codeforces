@@ -10,12 +10,16 @@ int main()
     while (n--)
     {
         cin >> a;
-        int sum = 0;
+        int minx = 0, maxx = 0, miny = 0, maxy = 0;
         for (int i = 0; i < a; i++)
         {
             cin >> b >> c;
-            sum += abs(b) + abs(c);
+            minx = min(minx, b);
+            maxx = max(maxx, b);
+            miny = min(miny, c);
+            maxy = max(maxy, c);
         }
+        long long sum = abs(minx) + maxx + abs(miny) + maxy;
         std::cout << sum * 2 << std::endl;
     }
     return 0;
