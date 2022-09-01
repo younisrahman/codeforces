@@ -11,6 +11,7 @@ int main()
         cin >> a;
         c = a;
         vector<int> v;
+        vector<vector<int>> vec;
         while (c--)
         {
             cin >> b;
