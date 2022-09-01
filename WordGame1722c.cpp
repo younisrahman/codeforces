@@ -1,31 +1,37 @@
 #include <bits/stdc++.h>
-//#include<iostream>
+
 using namespace std;
+
 int main()
 {
-    int n, a, b, c, d;
+
     vector<vector<string> > vec;
-    cin >> n;
-    while (n--)
+
+    string str;
+
+    for (int i = 0; i < 2; i++)
     {
-        cin >> a;
-        for (int i = 0; i < 3; i++)
+
+        vector<string> v1;
+
+        for (int j = 0; j < 2; j++)
         {
-            for (int j = 0; j < a; j++)
-            {
-                string s;
-                cin >> s;
-                // vec[i][j].push_back(s);
-                // vec[i][j] = s;
-            }
+
+            cin >> str;
+            v1.push_back(str);
         }
-        for (int i = 0; i < 3; i++)
-        {
-            for (int j = 0; j < a; j++)
-            {
-                cout << vec[i][j];
-            }
-        }
+
+        // Pushing back above 1D vector
+        // to create the 2D vector
+        vec.push_back(v1);
+    }
+
+    // Displaying the 2D vector
+    for (int i = 0; i < vec.size(); i++)
+    {
+        for (int j = 0; j < vec[i].size(); j++)
+            cout << vec[i][j] << " ";
+        cout << endl;
     }
     return 0;
 }
