@@ -1,37 +1,41 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-
 int main()
 {
+    int t;
+    cin >> t;
 
-    vector<vector<string> > vec;
-
-    string str;
-
-    for (int i = 0; i < 2; i++)
+    while (t--)
     {
-
-        vector<string> v1;
-
-        for (int j = 0; j < 2; j++)
-        {
-
-            cin >> str;
-            v1.push_back(str);
+        int n;
+        cin >> n;
+        string strings[3][n];
+        map<string, int> data;
+        for(int i =0;i<3;i++){
+            for(int j =0;j<n;j++){
+                string s;
+                cin >>s;
+                strings[i][j] = s;
+                data[strings[i][j]]++;
+            }
         }
 
-        // Pushing back above 1D vector
-        // to create the 2D vector
-        vec.push_back(v1);
-    }
+        for (int i = 0; i < 3; i++)
+        {
+            int ans=0;
+            for (int j = 0; j < n; j++)
+            {
+                if(data[strings[i][j]]==1){
+                    ans+=3;
+                }
+                else if (data[strings[i][j]] == 2)
+                {
+                    ans ++;
+                }
+            }
 
-    // Displaying the 2D vector
-    for (int i = 0; i < vec.size(); i++)
-    {
-        for (int j = 0; j < vec[i].size(); j++)
-            cout << vec[i][j] << " ";
-        cout << endl;
+            std::cout << ans << " ";
+        }
+        std::cout << std::endl;
     }
-    return 0;
 }
