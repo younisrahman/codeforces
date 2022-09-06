@@ -21,16 +21,41 @@ int main()
             cin >> c;
             vecb.push_back(c);
         }
+        int vecmin[a];
+        int vecmax[a];
 
-        // for (int i = 0; i < a; i++)
-        // {
-        //     std::cout << veca[i] << "  ";
-        // }
-        // std::cout << std::endl;
-        // for (int i = 0; i < a; i++)
-        // {
-        //     std::cout << vecb[i] << "  ";
-        // }
+        for (int i = a - 1; i >= 0; i--)
+        {
+            int count = 0;
+            for (int j = 0; j < a; j++)
+            {
+                if (veca[i] >= vecb[j])
+                {
+                    vecmin[i] = vecb[j] - veca[i];
+                    count++;
+                    break;
+                }
+            }
+            for (int k = a - 1; k >= 0; k--)
+            {
+                if (veca[i] >= vecb[k])
+                {
+                    vecmax[i] = vecb[k] - veca[i];
+                    count++;
+                    break;
+                }
+            }
+        }
+
+        for (int i = 0; i < a; i++)
+        {
+            std::cout << vecmin[i] << "  ";
+        }
+        std::cout << std::endl;
+        for (int i = 0; i < a; i++)
+        {
+            std::cout << vecmax[i] << "  ";
+        }
     }
     return 0;
 }
