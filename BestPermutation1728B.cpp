@@ -9,7 +9,12 @@ int main()
     cin >> n;
     while (n--)
     {
-        cin >> a >> b >> c >> d;
+        cin >> a;
+        for (int i = a - 3; i > 1; i--)
+        {
+            cout << i << " ";
+        }
+        cout << a - 2 << " 1 " << a - 1 << " " << a << endl;
     }
     return 0;
 }
