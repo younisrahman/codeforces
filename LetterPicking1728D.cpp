@@ -11,9 +11,17 @@ int main()
         int n = s.size();
         int l = 0, r = n - 1;
         while (l <= r && s[l] == s[r])
+        {
             l++, r--;
+            puts("A");
+        }
+
         while (l <= r && s[l] == s[l + 1])
+        {
             l += 2;
+            puts("B");
+        }
+
         if (l <= r)
             puts("Alice");
         else
