@@ -1,61 +1,62 @@
 #include <bits/stdc++.h>
-//#include<iostream>
 using namespace std;
 int main()
 {
-    int n, a, b, c, d;
-
-    cin >> n;
-    while (n--)
+    int tt;
+    cin >> tt;
+    while (tt--)
     {
-        cin >> a;
-        vector<int> veca;
-        vector<int> vecb;
-        for (int i = 0; i < a; i++)
+        int n, i, j;
+        cin >> n;
+        int a[n], b[n];
+        for (i = 0; i < n; i++)
         {
-            cin >> b;
-            veca.push_back(b);
+            cin >> a[i];
         }
-        for (int i = 0; i < a; i++)
+        for (i = 0; i < n; i++)
         {
-            cin >> c;
-            vecb.push_back(c);
+            cin >> b[i];
         }
-        int vecmin[a];
-        int vecmax[a];
-
-        for (int i = a - 1; i >= 0; i--)
+        int d1[n], d2[n];
+        int k = 0;
+        for (i = 0; i < n; i++)
         {
-            int count = 0;
-            for (int j = 0; j < a; j++)
+            if (a[i] <= b[k])
+                d1[i] = b[k] - a[i];
+            else
             {
-                if (veca[i] >= vecb[j])
+                int lower = k + 1, upper = n - 1;
+                while (lower <= upper)
                 {
-                    vecmin[i] = vecb[j] - veca[i];
-                    count++;
-                    break;
+                    int mid = (upper + lower) / 2;
+                    if (b[mid] < a[i])
+                        lower = mid + 1;
+                    else
+                    {
+                        k = mid;
+                        upper = mid - 1;
+                    }
                 }
-            }
-            for (int k = a - 1; k >= 0; k--)
-            {
-                if (veca[i] >= vecb[k])
-                {
-                    vecmax[i] = vecb[k] - veca[i];
-                    count++;
-                    break;
-                }
+                d1[i] = b[k] - a[i];
             }
         }
-
-        for (int i = 0; i < a; i++)
+        for (i = 0; i < n; i++)
+            cout << d1[i] << " ";
+        cout << endl;
+        k = n - 1;
+        d2[n - 1] = b[n - 1] - a[n - 1];
+        for (i = n - 2; i >= 0; i--)
         {
-            std::cout << vecmin[i] << "  ";
+            if (b[i] >= a[i + 1])
+                d2[i] = b[k] - a[i];
+            else
+            {
+                d2[i] = b[i] - a[i];
+                k = i;
+            }
         }
-        std::cout << std::endl;
-        for (int i = 0; i < a; i++)
-        {
-            std::cout << vecmax[i] << "  ";
-        }
+        for (i = 0; i < n; i++)
+            cout << d2[i] << " ";
+        cout << endl;
     }
-    return 0;
 }
