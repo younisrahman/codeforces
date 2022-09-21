@@ -31,7 +31,7 @@ int main()
         sort(a.begin(), a.end(), greater<ll>());
 
         int ans = 0;
-        int l = 0, r = n - a;
+        int l = 0, r = n - 1;
         while (l < r)
         {
             if (a[l] > -1 and a[r] > -1)
